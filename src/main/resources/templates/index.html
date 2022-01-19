@@ -18,9 +18,10 @@
         font-family: 'Open Sans', sans-serif;
     }
 </style>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" th:href="@{/}">Navbar</a>
+        <a class="navbar-brand" th:href="@{/}">Inicio</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,8 +42,67 @@
     </div>
 </nav>
 
-<div>
-    Este es una página de simulacro para el examen de admisión :v
+<div style="padding: 2vw;">
+    <div class="card shadow">
+        <div class="card-body">
+            <h1 class="card-title text-center" style="font-weight: bold;">
+                Asegura tu ingreso a la UNSCH</h1>
+
+        <p style="text-align: justify; padding: 0vh 5vh 0vh 5vh;">En esta página te ayudamos a superar con éxito los exámenes de admisión de 
+            la UNSCH con el fin de medir tu capacidad y prepararte a ser el próximo <em>cachimbo</em>.</p>
+        </div>
+    </div>
+</div>
+
+<div style="padding: 2vw;">
+    <div class="card shadow">
+        <div class="card-body" style="text-align: justify;">
+            <h1 class="card-title text-center" style="font-weight: bold;">
+        ¿Cómo te preparamos?</h1>
+        <p style="text-align: justify; padding: 0vh 5vh 0vh 5vh;">En nuestra plataforma 
+            vivirás una experiencia real de examen de admisión de acuerdo a las exigencias de la UNSCH, 
+            a través de un simulador inteligente que utiliza un potente banco de preguntas con 
+            información de los exámenes de admisión de los 10 últimos años.</p>
+        <h6 class="text-center fw-bold">Aquí encontrarás</h6>
+
+            <div class="container-fluid row" style="margin:0px;">
+                <div class="col-md-6 col-sm-6 text-center" 
+                style="margin-top:1vh; padding-left:5vw; padding-right:5vw;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="rgb(167, 14, 255)" class="bi bi-list-columns" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M0 .5A.5.5 0 0 1 .5 0h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 0 .5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 2h8a.5.5 0 0 1 0 1h-8a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 4h10a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 6h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2A.5.5 0 0 1 .5 8h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Zm-13 2a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5Zm13 0a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5Z"/>
+                      </svg>
+                      <h5 class="fw-bold">Simulacros</h5>
+                      <p class="text-center">
+                        Son exámenes recreados bajo los estándares, exigencias, 
+                        puntuaciones y particularidades de cada universidad.
+                      </p>
+                </div>
+
+                <div class="col-md-6 col-sm-6 text-center" 
+                style="margin-top:1vh; padding-left:5vw; padding-right:5vw;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#00cc8b" class="bi bi-file-earmark-check" viewBox="0 0 16 16">
+                        <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+                        <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+                    </svg>
+                      <h5 class="fw-bold">Solucionarios</h5>
+                      <p class="text-center">
+                        Revisa el solucionario de todas las prácticas y simulacros rendidos y mide tu aprendizaje.
+                      </p>
+                </div>
+                <div class="text-center" style="margin-top:1vh;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#f26d00" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                        <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
+                        <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
+                      </svg>
+                      <h5 class="fw-bold">Círculo de estudios</h5>
+                      <p class="text-center">
+                        Sube tus propias preguntas y resuélvelas junto a nuestra comunidad
+                      </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 </body>
 </html>
