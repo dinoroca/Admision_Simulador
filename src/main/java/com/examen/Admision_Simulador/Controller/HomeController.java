@@ -10,8 +10,8 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/registro")
-    public String registro(){
-        return "registro";
+    @GetMapping("/contactos")
+    public String contactos() {
+        return "contactos";
     }
 }
