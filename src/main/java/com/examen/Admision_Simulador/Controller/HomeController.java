@@ -14,4 +14,19 @@ public class HomeController {
     public String contactos() {
         return "contactos";
     }
+
+    @GetMapping("/nosotros")
+    public String nosotros() {
+        return "nosotros";
+    }
+
+    @GetMapping("/politica")
+    public String politica() {
+        return "politica";
+    }
+
+    @GetMapping("/preguntas")
+    public String preguntas() {
+        return "preguntas";
+    }
 }
