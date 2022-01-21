@@ -6,8 +6,176 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro | Usuario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"/>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"/>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
 </head>
+<style>
+    * {
+      font-family: "Open Sans", sans-serif;
+    }
+    ::selection {
+      background-color: #00ca7d;
+      color: #fff;
+    }
+    *:hover {
+      fill: #00ca7d;
+    }
+    .btn{
+      border-radius: 20px;
+    }
+    .form-control {
+        border-radius: 20px;
+        margin-top: 0.5vh;
+    }
+    .form-select {
+        border-radius: 20px;
+        margin-top: 0.5vh;
+    }
+</style>
 <body>
-Este es el registro
+<nav class="navbar navbar-expand-lg navbar-light fixed-top shadow" 
+style="background-color: rgba(255, 255, 255, 0.123); backdrop-filter: blur(10px);">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" th:href="@{/}" style="padding: 0vw 1vw 0vw 1vw;">
+            Sumulador</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+
+                <li class="nav-item">
+                    <a class="nav-link active text-center fw-bold" aria-current="page" th:href="@{/home}"
+                    style="padding: 0vw 1vw 0vw 1vw;">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="padding: 0vw 1vw 0vw 1vw; margin: 0vw 1vw 0vw 55vw;">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active btn btn-secondary text-white" href="#" th:href="@{/usuario/registro}"
+                    style="padding: 0vw 1vw 0vw 1vw; margin: 0vw 1vw 0vw 1vw;">
+                    Registro</a>
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link active  btn btn-success text-white" th:href="@{/usuario/registro}" href="#"
+                        style="padding: 0vw 1vw 0vw 1vw; margin: 0vw 0vw 0vw 1vw;">
+                        Login</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+	<!-- Page Content -->
+
+<div style="background: linear-gradient(
+    rgb(255, 255, 255),
+    rgb(179, 138, 255));">
+    <h3 class="text-center" style="margin-top: 8vh">
+        Estimado usuario, si eres nuevo Regístrate</h3>
+
+    <div style="margin:3vw">
+        <div class="container col-md-6 card shadow" style="padding-bottom: 3vh; margin-top: 3vh;
+        background-color: rgba(255, 255, 255, 0.274); backdrop-filter: blur(10px);">
+
+            <div class="col text-black-50" style="margin-bottom: 2vh;">
+                <h2 class="text-center">Registro</h2>
+            </div>
+
+            <form th:action="@{/usuario/save}" method="post">
+                <div class="form-group text-center">
+                    <label for="nombre">Nombres</label> <input type="text"
+                        class="form-control" id="nombre" name="nombre" required
+                        placeholder="p.ej. Juan" autocomplete="off">
+                </div>
+                <div class="row" style="padding-top: 2vh">
+                    <label class="control-label text-center" for="apellidos">
+                        Apellidos </label>
+                    <div class="form-group col-md-6">
+                        <input
+                        id="apellidos"
+                        class="form-control"
+                        placeholder="Apellido paterno"
+                        required
+                        autofocus="autofocus"
+                        />
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input
+                        id="apellidos"
+                        class="form-control"
+                        placeholder="Apellido materno"
+                        required
+                        autofocus="autofocus"
+                        />
+                    </div>
+                </div>
+                <div class="form-group text-center" style="padding-top: 2vh">
+                    <label class="control-label" for="paisProcedencia"
+                    >Área de postulación:
+                    </label>
+                    <select
+                    id="paisProcedencia"
+                    class="form-select text-center"
+                    name="paisProcedencia"
+                    required>
+                    <option value="null">--Seleccione su área--</option>
+                    <option value="Peru">Ciencias</option>
+                    <option value="USA">Letras</option>
+                    <option value="España">Biomédicas</option>
+                    </select>
+                </div>
+                <div class="row text-center" style="padding-top: 2vh">
+                    <label for="email">Correo</label>
+                    <div class="form-group col-md-6">
+                        <input type="email"
+                        class="form-control" id="email" name="email" required
+                        placeholder="Ingrese su email" autocomplete="off">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="text"
+                        class="form-control" id="telefono" name="telefono" required
+                        placeholder="Ingrese su telefono" autocomplete="off">
+                    </div>
+                </div>
+                <div class="row text-center" style="padding-top: 2vh">
+                    <label for="password">Contraseña</label>
+                    <div class="form-group col-md-6">
+                        <input type="password"
+                        class="form-control" id="password" name="password" required
+                        placeholder="Ingrese su contraseña" autocomplete="off">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="password"
+                        class="form-control" id="password" name="password" required
+                        placeholder="Ingrese su contraseña" autocomplete="off">
+                    </div>
+                </div>
+                <div class="">
+                    <button type="submit" class="btn btn-success" style="width: 100%; margin-top:5vh">
+                        Registrar</button>
+                </div>
+            </form>
+        </div>
+        <h5 class="text-center" style="margin-top: 2vh; padding-bottom: 2vh;">Si ya tienes cuenta, ingresa
+            <a th:href="@{/usuario/login}" class="card-link text-center"
+            >Aquí</a> </h5>
+    </div>
+</div>
 </body>
 </html>
