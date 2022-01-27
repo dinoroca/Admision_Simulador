@@ -33,7 +33,7 @@ public class UsuarioController {
     @PostMapping("/save")
     public String save(Usuario usuario) {
         logger.info("Usuario registro: {}", usuario);
-        usuario.setContraseña(passEncode.encode(usuario.getContraseña()));
+        usuario.setPassword(passEncode.encode(usuario.getPassword()));
         usuarioService.save(usuario);
         return "redirect:/usuario/principal";
     }
@@ -46,15 +46,16 @@ public class UsuarioController {
     public String acceder(Usuario usuario, HttpSession session) {
         logger.info("Accesos : {}", usuario);
 
-        Optional<Usuario> user=usuarioService.findByEmail(usuario.getEmail());
+        Optional<Usuario> user = usuarioService.findByEmail(usuario.getEmail());
         //logger.info("Usuario de db: {}", user.get());
 
         if (user.isPresent()) {
             session.setAttribute("idusuario", user.get().getId());
         }else {
             logger.info("Usuario no existe");
+            //return "redirect:/usuario/login";
         }
 
-        return "redirect:/usuario/principal";
+        return "usuario/principal";
     }
 }

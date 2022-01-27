@@ -21,7 +21,8 @@ public class Examen {
 
     private Time duracion;
 
-    @OneToOne(mappedBy ="examen")
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Usuario_id", referencedColumnName = "id")
     private Usuario usuario;
 
     public Examen() {

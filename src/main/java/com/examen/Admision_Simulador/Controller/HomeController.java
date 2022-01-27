@@ -29,4 +29,9 @@ public class HomeController {
     public String preguntas() {
         return "preguntas";
     }
+
+    @GetMapping("/carreras")
+    public String carreras() {
+        return "carreras";
+    }
 }

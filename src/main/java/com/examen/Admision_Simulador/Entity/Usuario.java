@@ -21,14 +21,14 @@ public class Usuario {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "contraseña")
-    private String contraseña;
+    @Column(name = "password")
+    private String password;
 
     @Column(name = "area")
     private String area;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "examen_id", referencedColumnName = "id")
+    //ghsjakdmksd
+    @OneToOne(mappedBy ="usuario")
     private Examen examen;
 
     public Examen getExamen() {
@@ -42,13 +42,13 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Integer id, String nombres, String apellidoPaterno, String apellidoMaterno, String email, String contraseña, String area) {
+    public Usuario(Integer id, String nombres, String apellidoPaterno, String apellidoMaterno, String email, String password, String area) {
         this.id = id;
         this.nombres = nombres;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
         this.email = email;
-        this.contraseña = contraseña;
+        this.password = password;
         this.area = area;
     }
 
@@ -92,12 +92,12 @@ public class Usuario {
         this.email = email;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getArea() {
@@ -116,7 +116,7 @@ public class Usuario {
                 ", apellidoPaterno='" + apellidoPaterno + '\'' +
                 ", apellidoMaterno='" + apellidoMaterno + '\'' +
                 ", email='" + email + '\'' +
-                ", contraseña='" + contraseña + '\'' +
+                ", password='" + password + '\'' +
                 ", area='" + area + '\'' +
                 '}';
     }
