@@ -51,11 +51,21 @@ public class UsuarioController {
 
         if (user.isPresent()) {
             session.setAttribute("idusuario", user.get().getId());
+            return "usuario/principal";
         }else {
             logger.info("Usuario no existe");
-            //return "redirect:/usuario/login";
+            return "redirect:/usuario/login";
         }
+    }
 
-        return "usuario/principal";
+    @GetMapping("/cerrar")
+    public String cerrarSesion( HttpSession session ) {
+        session.removeAttribute("idusuario");
+        return "redirect:/home";
+    }
+
+    @PostMapping("/finalizar")
+    public String finalizar(){
+        return "usuario/resultado";
     }
 }
