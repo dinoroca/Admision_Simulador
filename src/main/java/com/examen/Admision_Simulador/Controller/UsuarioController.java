@@ -36,7 +36,7 @@ public class UsuarioController {
         logger.info("Usuario registro: {}", usuario);
         usuario.setPassword(passEncode.encode(usuario.getPassword()));
         usuarioService.save(usuario);
-        return "redirect:/usuario/principal";
+        return "usuario/principal";
     }
     @GetMapping("/login")
     public String login() {
