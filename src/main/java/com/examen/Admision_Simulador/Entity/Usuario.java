@@ -1,6 +1,7 @@
 package com.examen.Admision_Simulador.Entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "usuario")
@@ -27,23 +28,23 @@ public class Usuario {
     @Column(name = "area")
     private String area;
 
-    //ghsjakdmksd
-    @OneToOne(mappedBy ="usuario")
-    private Examen examen;
-
-    public Examen getExamen() {
-        return examen;
-    }
-
-    public void setExamen(Examen examen) {
-        this.examen = examen;
-    }
+    @OneToMany(mappedBy ="usuario")
+    private List<Pregunta> preguntas;
 
     public Usuario() {
     }
 
     public Usuario(Integer id, String nombres, String apellidoPaterno, String apellidoMaterno, String email, String password, String area) {
         this.id = id;
+        this.nombres = nombres;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.email = email;
+        this.password = password;
+        this.area = area;
+    }
+
+    public Usuario(String nombres, String apellidoPaterno, String apellidoMaterno, String email, String password, String area) {
         this.nombres = nombres;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
@@ -106,6 +107,14 @@ public class Usuario {
 
     public void setArea(String area) {
         this.area = area;
+    }
+
+    public List<Pregunta> getPreguntas() {
+        return preguntas;
+    }
+
+    public void setPreguntas(List<Pregunta> preguntas) {
+        this.preguntas = preguntas;
     }
 
     @Override

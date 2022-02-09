@@ -35,7 +35,7 @@ public class Pregunta {
     private char alternativaCorrecta;
 
     @ManyToOne
-    private Curso curso;
+    private Usuario usuario;
 
     public Pregunta() {
     }
@@ -124,12 +124,12 @@ public class Pregunta {
         this.alternativaCorrecta = alternativaCorrecta;
     }
 
-    public Curso getCurso() {
-        return curso;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setCurso(Curso curso) {
-        this.curso = curso;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
     @Override

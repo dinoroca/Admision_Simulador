@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,14 +44,15 @@ public class UsuarioController {
     }
 
     @PostMapping("/acceder")
-    public String acceder(Usuario usuario, HttpSession session) {
+    public String acceder(Model model, Usuario usuario, HttpSession session) {
         logger.info("Accesos : {}", usuario);
-
         Optional<Usuario> user = usuarioService.findByEmail(usuario.getEmail());
+        model.addAttribute("sesion",session.getAttribute("idusuario"));
         //logger.info("Usuario de db: {}", user.get());
 
         if (user.isPresent()) {
             session.setAttribute("idusuario", user.get().getId());
+            model.addAttribute("preguntas",user.get().getPreguntas());
             return "usuario/principal";
         }else {
             logger.info("Usuario no existe");
@@ -64,7 +66,7 @@ public class UsuarioController {
         return "redirect:/home";
     }
 
-    @PostMapping("/finalizar")
+    @GetMapping("/finalizar")
     public String finalizar(){
         return "usuario/resultado";
     }

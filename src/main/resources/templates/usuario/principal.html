@@ -47,8 +47,20 @@
 
 <body>
 <a th:href="@{/usuario/cerrar}">Cerrar Sesión</a>
+<a th:href="@{/usuario/finalizar}">Finalizar</a>
 <h3>Página principal del User</h3>
 
-</body>
+<h6 th:text=" 'Nombre: '+ ${usuario.nombres}"> </h6>
 
+<div class="col-lg-3 col-md-6 mb-4" th:each="pregunta: ${pregunta}">
+    <div class="card h-100">
+        <img class="card-img-top"
+             th:src="@{/img/{imgs} (imgs=${pregunta.imagen})} " alt="">
+        <div class="card-body">
+            <p class="card-text" th:text="${pregunta.contenido}"></p>
+        </div>
+    </div>
+</div>
+
+</body>
 </html>
